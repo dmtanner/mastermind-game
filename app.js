@@ -4,9 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var expressSession = require('express-session');
+var mongoStore = require('mongoose-connect')({ session: expressSession });
+var mongoose = require('mongoose');
+require('./models/users_model.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+var conn = mongoose.connect('mongodb://localhost/mastermind');	//mastermind?
 
 var app = express();
 
@@ -21,6 +27,15 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(expressSession({
+		secret: 'SECRET',
+		cookie: {maxAge: 60*60*1000},
+		store: new mongoStore({
+				db: mongoose.connection.db,
+				collection: 'sessions'
+		})
+});
 
 app.use('/', routes);
 app.use('/users', users);
