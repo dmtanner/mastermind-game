@@ -5,13 +5,13 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var expressSession = require('express-session');
-var mongoStore = require('mongoose-connect')({ session: expressSession });
+var mongoStore = require('connect-mongo')({session: expressSession});
 var mongoose = require('mongoose');
 require('./models/users_model.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
+//var mastermindDB = mongoose.createConnection('mongodb://localhost/mastermind');
 var conn = mongoose.connect('mongodb://localhost/mastermind');	//mastermind?
 
 var app = express();
@@ -32,10 +32,11 @@ app.use(expressSession({
 		secret: 'SECRET',
 		cookie: {maxAge: 60*60*1000},
 		store: new mongoStore({
-				db: mongoose.connection.db,
+				storage: 'mongodb',
+				db: 'mastermind',
 				collection: 'sessions'
 		})
-});
+}));
 
 app.use('/', routes);
 app.use('/users', users);
