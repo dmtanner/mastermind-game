@@ -6,7 +6,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
 	<script src="/javascripts/userInfo.js"></script>
 </head>
-<body ng-app="userInfo">
+<body ng-app="userInfo" ng-controller="LoginCtrl">
   <form ng-submit="sendUserInfo()">
     <input type="text" ng-model="userName"></input>
     <input type="text" ng-model="passWord"></input>
