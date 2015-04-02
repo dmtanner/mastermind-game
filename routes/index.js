@@ -3,10 +3,6 @@ var router = express.Router();
 var crypto = require('crypto');
 var express = require('express');
 var users = require('../controllers/users_controller');
-/* GET home page.
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-}); */
 
 router.use('/static', express.static( './static')).
     use('/lib', express.static( '../lib')
@@ -34,13 +30,13 @@ router.get('/signup', function(req, res){
   if(req.session.user){
     res.redirect('/');
   }
-  res.render('signup', {msg:req.session.msg});
+  res.render('signup', {msg:"Signup Screen!"});
 });
 router.get('/login',  function(req, res){
   if(req.session.user){
     res.redirect('/');
   }
-  res.render('login', {msg:req.session.msg});
+  res.render('login', {msg:"Login Screen!"});
 });
 router.get('/logout', function(req, res){
   req.session.destroy(function(){
