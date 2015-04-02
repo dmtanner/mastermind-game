@@ -1,23 +1,18 @@
- <!doctype html>
- <html>
- <head>
-   <title>User Login and Sessions Signup</title>
-   <link rel="stylesheet" type="text/css"
-       href="/static/css/styles.css" />
- </head>
- <body>
-   <div class="form-container">
-     <p class="form-header">Sign Up</p>
-     <form method="POST">
-       <label>Username:</label>
-         <input type="text" name="username"><br>
-       <label>Password:</label>
-         <input type="password" name="password"><br>
-       <label>Email:</label>
-         <input type="email" name="email"><br>
-       <input type="submit" value="Register">
-     </form>
-   </div>
-   <hr><%= msg %>
- </body>
- </html>
+<!doctype html>
+<html>
+<head>
+	<title>Login Page</title>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+	<script src="/javascripts/userInfo.js"></script>
+</head>
+<body ng-app="userInfo" ng-controller="SignupCtrl">
+  <form ng-submit="sendUserInfo()">
+    <input type="text" ng-model="userName"></input>
+    <input type="text" ng-model="passWord"></input>
+    <input type="text" ng-model="email"></input>
+    <button type="submit">Login</button>
+  </form>	  
+</body>
+</html>
+
