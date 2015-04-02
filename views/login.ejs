@@ -3,8 +3,15 @@
 <head>
 	<title>Login Page</title>
 </head>
-<body>
-	
+<body ng-app="userInfo">
+  <form ng-submit="sendUserInfo()">
+    <input type="text" ng-model="userName"></input>
+    <input type="text" ng-model="passWord"></input>
+    <button type="submit">Login</button>
+  </form>	  
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"</script>
+	<script src="/javascripts/userInfo.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
 </body>
 </html>
 
