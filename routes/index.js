@@ -4,10 +4,10 @@ var crypto = require('crypto');
 var express = require('express');
 var users = require('../controllers/users_controller');
 
-/* GET home page. */
+/* GET home page.
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
-});
+}); */
 
 router.use('/static', express.static( './static')).
     use('/lib', express.static( '../lib')
