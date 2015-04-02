@@ -1,4 +1,4 @@
-angular.module('userInfo', ['ui.router'])
+angular.module('userInfo', [])
 .controller('LoginCtrl', [
   '$scope',
   function($scope) {
