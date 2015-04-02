@@ -1,7 +1,8 @@
 angular.module('userInfo', [])
 .controller('LoginCtrl', [
   '$scope',
-  function($scope) {
+  '$http',
+  function($scope, $http) {
     $scope.sendUserInfo = function() {
       if ($scope.userName === '') {return;}
       if ($scope.passWord === '') {return;}
