@@ -21,6 +21,11 @@ router.get('/', function(req, res){
     res.redirect('/login');
   }
 });
+// this route prevents "304" code from thinking view is already cached
+app.get('/*', function(req, res, next){ 
+  res.setHeader('Last-Modified', (new Date()).toUTCString());
+  next(); 
+});
 router.get('/user', function(req, res){
   if (req.session.user) {
     res.render('user', {msg:req.session.msg});
