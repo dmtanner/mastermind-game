@@ -13,7 +13,8 @@ router.get('/', function(req, res){
   console.log("in / route");
   if (req.session.user) {
 	console.log("User has session");
-	res.render(200, 'index', {username: req.session.username,
+	req.headers['cache-control'] = 'no-cache';
+	res.render('index', {username: req.session.username,
 						 msg:req.session.msg});
   } else {
 	console.log("User does not have session");
@@ -22,7 +23,7 @@ router.get('/', function(req, res){
   }
 });
 // this route prevents "304" code from thinking view is already cached
-app.get('/*', function(req, res, next){ 
+router.get('/*', function(req, res, next){ 
   res.setHeader('Last-Modified', (new Date()).toUTCString());
   next(); 
 });
