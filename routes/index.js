@@ -10,10 +10,13 @@ router.use('/static', express.static( './static')).
 
 // Login routes
 router.get('/', function(req, res){
+  console.log("in / route");
   if (req.session.user) {
+	console.log("User has session");
     res.render('index', {username: req.session.username,
                          msg:req.session.msg});
   } else {
+	console.log("User does not have session");
     req.session.msg = 'Access denied!';
     res.redirect('/login');
   }

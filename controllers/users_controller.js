@@ -23,13 +23,17 @@
    });
  };
  exports.login = function(req, res){
+   console.log("In Login Controller");
    User.findOne({ username: req.body.username })
    .exec(function(err, user) {
+	 console.log("In Login Controller Exec");
      if (!user){
        err = 'User Not Found.';
+	   console.log("User not found");
      } else if (user.hashed_password ===
                 hashPW(req.body.password.toString())) {
-       req.session.regenerate(function(){
+       console.log("Password Correct!");
+	   req.session.regenerate(function(){
          req.session.user = user.id;
          req.session.username = user.username;
          req.session.msg = 'Authenticated as ' + user.username;
