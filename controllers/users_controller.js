@@ -34,7 +34,9 @@
                 hashPW(req.body.password.toString())) {
        console.log("Password Correct!");
 	   req.session.regenerate(function(){
+		 console.log("user.id: " + user.id);
          req.session.user = user.id;
+		 console.log("user.username: " + user.username);
          req.session.username = user.username;
          req.session.msg = 'Authenticated as ' + user.username;
          res.redirect('/');

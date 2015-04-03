@@ -1,28 +1,16 @@
-<!--<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>-->
-
 <!doctype html>
-<html ng-app="myApp">
+<html>	<!-- may want to add ng-app and controller later -->
 <head>
   <title>User Login and Sessions</title>
   <link rel="stylesheet" type="text/css"
       href="/static/css/styles.css" />
 </head>
 <body>
-  <div ng-controller="myController">
-    <h2>Welcome. You are Logged In as </h2>
+  <div>
+    <h2>Welcome. You are Logged In as <%= username %> </h2>
     <a href="/logout">Logout</a>
     <a href="/user">Edit User</a>
-    <p>Place Your Code Here<p>
+    <p>A message from your request: <%= msg %><p>
   </div>
   <hr>
   <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>

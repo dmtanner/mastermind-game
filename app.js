@@ -28,14 +28,16 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//console.log("Mongoose db name: " + mongoose.connection.getName());
 app.use(expressSession({
 		secret: 'SECRET',
 		cookie: {maxAge: 60*60*1000},
 		store: new mongoStore({
-				storage: 'mongodb',
 				db: 'mastermind',
 				collection: 'sessions'
-		})
+		}),
+		resave: false,
+		saveUninitialized: false
 }));
 
 app.use('/', routes);
