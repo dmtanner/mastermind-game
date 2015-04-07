@@ -8,10 +8,14 @@
  exports.signup = function(req, res){
    console.log("In Signup Controller");
    var user = new User({username:req.body.username});
+   console.log("User set");
    user.set('hashed_password', hashPW(req.body.password));
+   console.log("Password set");
    user.set('email', req.body.email);
+   console.log("Email set");
    user.save(function(err) {
      if (err){
+	   console.log("Error in saving user" + err);
        res.session.error = err;
        res.redirect('/signup');
      } else {

@@ -4,16 +4,29 @@ var crypto = require('crypto');
 var express = require('express');
 var users = require('../controllers/users_controller');
 
-router.use('/static', express.static( './static')).
-    use('/lib', express.static( '../lib')
-);
+router.use('/static', express.static( './static'));
+
+router.get('/mastermind', function(req, res) {
+	
+  console.log("in /mastermind route");
+  if (req.session.user) {
+	console.log("User has session");
+	//req.headers['cache-control'] = 'no-cache';
+	res.render('mastermind');
+
+  } else {
+	console.log("User does not have session");
+    req.session.msg = 'Access denied!';
+    res.redirect('/login');
+  }
+});
 
 // Login routes
 router.get('/', function(req, res){
   console.log("in / route");
   if (req.session.user) {
 	console.log("User has session");
-	req.headers['cache-control'] = 'no-cache';
+	//req.headers['cache-control'] = 'no-cache';
 	res.render('index', {username: req.session.username,
 						 msg:req.session.msg});
   } else {
@@ -22,11 +35,13 @@ router.get('/', function(req, res){
     res.redirect('/login');
   }
 });
+/*
 // this route prevents "304" code from thinking view is already cached
 router.get('/*', function(req, res, next){ 
   res.setHeader('Last-Modified', (new Date()).toUTCString());
   next(); 
 });
+*/
 router.get('/user', function(req, res){
   if (req.session.user) {
     res.render('user', {msg:req.session.msg});

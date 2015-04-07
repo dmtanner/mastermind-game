@@ -74,6 +74,6 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.disable('etag');
+//app.disable('etag');
 //app.listen(80);
 module.exports = app;

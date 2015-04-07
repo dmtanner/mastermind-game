@@ -8,10 +8,13 @@
 </head>
 <body ng-controller="LoginCtrl">
   <form ng-submit="sendUserInfo()">
-    <input type="text" ng-model="userName"></input>
-    <input type="text" ng-model="passWord"></input>
-    <button type="submit">Login</button>
-  </form>	  
+	Username:
+    <input type="text" ng-model="userName"></input><br>
+	Password:
+    <input type="text" ng-model="passWord"></input><br>
+    <button type="submit">Login</button><br>
+  </form>
+  <a href="/signup"> Sign Up</a>	  
 </body>
 </html>
 

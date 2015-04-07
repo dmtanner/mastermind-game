@@ -10,7 +10,7 @@ angular.module('userInfo', [])
 	username: $scope.userName,
 	password: $scope.passWord
       }
-      return $http.post('/login', UserInfo);
+       return $http.post('/login', UserInfo);
     };
   }
 ])
