@@ -4,42 +4,97 @@ var crypto = require('crypto');
 var express = require('express');
 var users = require('../controllers/users_controller');
 
+var mastermind = require('../controllers/mastermind');
+
 router.use('/static', express.static( './static'));
 
 router.get('/mastermind', function(req, res) {
-	
+
   console.log("in /mastermind route");
   if (req.session.user) {
-	console.log("User has session");
-	//req.headers['cache-control'] = 'no-cache';
-	res.render('mastermind');
+    console.log("User has session");
+    //req.headers['cache-control'] = 'no-cache';
+    res.render('mastermind');
 
   } else {
-	console.log("User does not have session");
+    console.log("User does not have session");
     req.session.msg = 'Access denied!';
     res.redirect('/login');
   }
+});
+
+// Mastermind REST services
+
+router.param('gameid', function(req, res, next, id) {
+    req.gameid = parseInt(id);
+    return next();
+});
+
+router.post('/mastermind/start', function(req, res) {
+    console.log("Starting new mastermind game...");
+    if (req.session.user) {
+        res.send(mastermind.startCPUGame(req.session.user));
+    } else {
+        console.log("User does not have session");
+        req.session.msg = 'Access denied!';
+        res.redirect('/login');
+    }
+});
+
+router.post('/mastermind/:gameid/guess', function(req, res) {
+    console.log("Making a guess...");
+    console.log(req.body);
+    if (req.session.user) {
+        res.send(mastermind.makeGuess(req.gameid, req.session.user, req.body.guess));
+    } else {
+        console.log("User does not have session");
+        req.session.msg = 'Access denied!';
+        res.redirect('/login');
+    }
+});
+
+router.post('/mastermind/:gameid/guess', function(req, res) {
+    console.log("Getting guess history...");
+    console.log(req.body);
+    if (req.session.user) {
+        res.send(mastermind.getGuessHistory(req.gameid, req.session.user));
+    } else {
+        console.log("User does not have session");
+        req.session.msg = 'Access denied!';
+        res.redirect('/login');
+    }
+});
+
+router.delete('/mastermind' , function(req, res) {
+    if (req.session.user) {
+        mastermind.deleteAllGames();
+        res.send(JSON.stringify({message: "deleted all games"}));
+    } else {
+        console.log("User does not have session");
+        req.session.msg = 'Access denied!';
+        res.redirect('/login');
+    }
 });
 
 // Login routes
 router.get('/', function(req, res){
   console.log("in / route");
   if (req.session.user) {
-	console.log("User has session");
-	//req.headers['cache-control'] = 'no-cache';
-	res.render('index', {username: req.session.username,
-						 msg:req.session.msg});
+    console.log("User has session");
+    //req.headers['cache-control'] = 'no-cache';
+    res.render('index', {username: req.session.username,
+                         msg:req.session.msg});
   } else {
-	console.log("User does not have session");
+    console.log("User does not have session");
     req.session.msg = 'Access denied!';
     res.redirect('/login');
   }
 });
 /*
 // this route prevents "304" code from thinking view is already cached
-router.get('/*', function(req, res, next){ 
+router.get('/*', function(req, res, next){
   res.setHeader('Last-Modified', (new Date()).toUTCString());
-  next(); 
+  next();
 });
 */
 router.get('/user', function(req, res){

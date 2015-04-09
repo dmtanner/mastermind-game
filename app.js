@@ -11,8 +11,12 @@ require('./models/users_model.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+//var mastermind_router = require("./routes/mastermind");
+//var mastermind_controller = require("./controllers/mastermind");
+
 //var mastermindDB = mongoose.createConnection('mongodb://localhost/mastermind');
-var conn = mongoose.connect('mongodb://localhost/mastermind');	//mastermind?
+var conn = mongoose.connect('mongodb://localhost/mastermind');  //mastermind?
 
 var app = express();
 
@@ -30,17 +34,18 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //console.log("Mongoose db name: " + mongoose.connection.getName());
 app.use(expressSession({
-		secret: 'SECRET',
-		cookie: {maxAge: 60*60*1000},
-		store: new mongoStore({
-				db: 'mastermind',
-				collection: 'sessions'
-		}),
-		resave: false,
-		saveUninitialized: false
+        secret: 'SECRET',
+        cookie: {maxAge: 60*60*1000},
+        store: new mongoStore({
+                db: 'mastermind',
+                collection: 'sessions'
+        }),
+        resave: false,
+        saveUninitialized: false
 }));
 
 app.use('/', routes);
+app.use('/mastermind', mastermind_router);
 app.use('/users', users);
 
 // catch 404 and forward to error handler
