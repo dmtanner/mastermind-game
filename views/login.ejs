@@ -1,3 +1,4 @@
+<!--
 <!doctype html>
 <html ng-app="userInfo">
 <head>
@@ -17,4 +18,28 @@
   <a href="/signup"> Sign Up</a>	  
 </body>
 </html>
-
+-->
+<!doctype html>
+<html>
+<head>
+  <title>User Login and Sessions</title>
+  <link rel="stylesheet" type="text/css" 
+        href="/stylesheets/styles.css" />
+</head>
+<body>
+  <div class="form-container">
+    <p class="form-header">Login</p>
+    <form method="POST">
+        <label>Username:</label>
+        <input type="text" name="username"><br>
+        <label>Password:</label>
+        <input type="password" name="password"><br>
+        <input type="submit" value="Login">
+    </form>
+  </div>
+  <a href="/signup">Sign Up</a>
+  <hr><%= msg %>
+ <h2>Google Authentication</h2>
+  <a href="/auth/google">Sign In with Google</a>
+</body>
+</html>

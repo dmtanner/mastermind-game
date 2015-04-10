@@ -2,6 +2,7 @@ angular.module('userInfo', [])
 .controller('LoginCtrl', [
   '$scope',
   '$http',
+  '$location',
   function($scope, $http) {
     $scope.sendUserInfo = function() {
       if ($scope.userName === '') {return;}
@@ -11,6 +12,9 @@ angular.module('userInfo', [])
 	password: $scope.passWord
       }
        return $http.post('/login', UserInfo);
+	   //.success(function() {
+		//	   $location.url('/');
+	   //});
     };
   }
 ])
