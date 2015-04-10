@@ -32,8 +32,11 @@ router.param('gameid', function(req, res, next, id) {
 
 router.post('/mastermind/start', function(req, res) {
     console.log("Starting new mastermind game...");
-    if (req.session.user) {
-        res.send(mastermind.startCPUGame(req.session.user));
+    console.log(req.body);
+    if (true) { //req.session.user) {
+        if (req.body.code_length == undefined) req.body.code_length = 4;
+        if (req.body.max_guesses == undefined) req.body.max_guesses = 15;
+        res.send(mastermind.startCPUGame(req.session.user, req.body.code_length, req.body.max_guesses));
     } else {
         console.log("User does not have session");
         req.session.msg = 'Access denied!';
@@ -44,7 +47,7 @@ router.post('/mastermind/start', function(req, res) {
 router.post('/mastermind/:gameid/guess', function(req, res) {
     console.log("Making a guess...");
     console.log(req.body);
-    if (req.session.user) {
+    if (true) {//req.session.user) {
         res.send(mastermind.makeGuess(req.gameid, req.session.user, req.body.guess));
     } else {
         console.log("User does not have session");
@@ -53,7 +56,7 @@ router.post('/mastermind/:gameid/guess', function(req, res) {
     }
 });
 
-router.post('/mastermind/:gameid/guess', function(req, res) {
+router.post('/mastermind/:gameid/history', function(req, res) {
     console.log("Getting guess history...");
     console.log(req.body);
     if (req.session.user) {

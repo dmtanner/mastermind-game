@@ -113,8 +113,10 @@ function archive(game) {
 function startNewGame(host, guest, code, maxguesses) {
     var game = new Game(host, guest, code, maxguesses);
     currentGames[game.gameID] = game;
-    return JSON.stringify({game: 'mastermind', id: game.gameID});
-    //TODO: figure out how to notify the "guest" player.
+    return JSON.stringify({game: 'mastermind',
+                           id: game.gameID,
+                           code_length: code.length,
+                           max_guesses: maxguesses});
 }
 
 // DEBUG: delete all games
