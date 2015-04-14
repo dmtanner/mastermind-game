@@ -28,6 +28,7 @@
  };
  exports.login = function(req, res){
    console.log("In Login Controller");
+   console.log(req.body);
    User.findOne({ username: req.body.username })
    .exec(function(err, user) {
 	 console.log("In Login Controller Exec");
