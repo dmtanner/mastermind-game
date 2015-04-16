@@ -1,24 +1,44 @@
 <!DOCTYPE html>
-<html>
-<head>
-<!-- Bootstrap core CSS -->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Mastermind Home</title>
+
+    <!-- Bootstrap core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-<style>
-body  {
-    background-image: url("images/brain.jpg");
-    background-size: 100%;
-}
-</style>
-</head>
-<body>
 
-<div style="padding-left:40%; padding-top:30%;" > 
-  <a class="btn btn-default" href="/mastermind" role="button">
-    <span class="glyphicon glyphicon-play"></span>
-    <span >Play Mastermind</span>
-  </a>
-</div>
+    <!-- Custom styles for this template
+    <link href="/stylesheets/styles.css" rel="stylesheet" type="text/css"> -->
 
-</body>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+	<div class="navbar-header">
+	  <span class="navbar-brand">Welcome to Mastermind</span>
+	</div>
+	<div>
+	  <ul class="nav navbar-nav navbar-right">
+	    <li class="navbar-brand">Currently Logged In As: <b><i> <%= username %></b></i></li>
+	    <li><a href="/logout">Logout</a></li>
+	  </ul>
+	</div>
+      </div>
+    </nav>
+
+  </body>
 </html>
-
