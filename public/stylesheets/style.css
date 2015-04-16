@@ -8,6 +8,14 @@ a {
 .navbar {
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-bottom-color: #428bca;
+  border-bottom-color: #5cb85c;
 }
-
+.row div[id="button"] {
+  padding-top: 75px;
+}
+#space {
+  padding-top: 95px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #5cb85c;
+}
