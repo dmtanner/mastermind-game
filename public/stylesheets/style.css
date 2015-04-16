@@ -6,5 +6,8 @@ a {
   color: #00B7FF;
 }
 .navbar {
-  border-bottom: 1px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #428bca;
 }
+
