@@ -14,7 +14,7 @@ router.get('/mastermind', function(req, res) {
   if (req.session.user) {
     console.log("User has session");
     //req.headers['cache-control'] = 'no-cache';
-    res.render('mastermind');
+    res.render('mastermindGamePage');
 
   } else {
     console.log("User does not have session");
