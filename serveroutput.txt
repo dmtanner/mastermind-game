@@ -1,0 +1,319 @@
+
+> mastermind-game@0.0.0 start /home/ec2-user/mastermind-game
+> node ./bin/www
+
+in / route
+User has session
+[0mGET / [36m304 [0m20.593 ms - -[0m
+[0mGET /images/brain.gif [36m304 [0m3.060 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m2.586 ms - -[0m
+in /mastermind route
+User has session
+[0mGET /mastermind [36m304 [0m5.758 ms - -[0m
+[0mGET /rom-0 [33m404 [0m3.569 ms - 1037[0m
+in / route
+User does not have session
+[0mHEAD / [36m302 [0m4.252 ms - 40[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.509 ms - 40[0m
+[0mGET /login [32m200 [0m2.057 ms - 1870[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m3.398 ms - 68[0m
+[0mGET /weatherAjax.html [33m404 [0m1.606 ms - 1037[0m
+[0mGET /login [32m200 [0m1.092 ms - 1870[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.919 ms - 68[0m
+[0mGET /login [32m200 [0m3.744 ms - 1870[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.944 ms - -[0m
+In Login Controller
+{ username: 'me', password: 'me' }
+In Login Controller Exec
+Password Correct!
+user.id: 551ddb510e27f59c4e3c05b0
+user.username: me
+user authenticated correctly
+[0mPOST /login [36m302 [0m23.756 ms - 58[0m
+in / route
+User has session
+[0mGET / [32m200 [0m3.086 ms - 1905[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.910 ms - -[0m
+[0mGET /images/brain.gif [36m304 [0m0.802 ms - -[0m
+in /mastermind route
+User has session
+[0mGET /mastermind [36m304 [0m3.275 ms - -[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m3.547 ms - 40[0m
+[0mGET /robots.txt [33m404 [0m2.372 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.090 ms - 68[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.087 ms - 68[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.432 ms - 68[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.354 ms - 68[0m
+[0mGET /robots.txt [33m404 [0m1.523 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.277 ms - 68[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m3.012 ms - 68[0m
+[0mGET /robots.txt [33m404 [0m1.613 ms - 1037[0m
+in / route
+User does not have session
+[0mHEAD / [36m302 [0m2.063 ms - 40[0m
+in / route
+User does not have session
+[0mHEAD / [36m302 [0m1.929 ms - 40[0m
+[0mGET /manager/html [33m404 [0m1.743 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.067 ms - 40[0m
+[0mGET /manager/html [33m404 [0m1.954 ms - 1037[0m
+in /mastermind route
+User does not have session
+[0mGET /mastermind [36m302 [0m2.359 ms - 68[0m
+[0mGET /login [32m200 [0m3.491 ms - 1870[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.815 ms - -[0m
+[0mGET /signup [32m200 [0m5.109 ms - 2038[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.699 ms - -[0m
+In Signup Controller
+User set
+Password set
+Email set
+[0mPOST /signup [36m302 [0m12.307 ms - 58[0m
+in / route
+User has session
+[0mGET / [32m200 [0m4.277 ms - 1909[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.861 ms - -[0m
+[0mGET /images/brain.gif [36m304 [0m0.509 ms - -[0m
+in / route
+User has session
+[0mGET / [36m304 [0m3.649 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m1.446 ms - -[0m
+[0mGET /images/brain.gif [36m304 [0m1.613 ms - -[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.622 ms - 68[0m
+[0mGET /login [32m200 [0m3.969 ms - 1870[0m
+[0mGET /stylesheets/signin.css [32m200 [0m2.848 ms - 969[0m
+In Login Controller
+{ username: 'wordel', password: 'witty' }
+In Login Controller Exec
+Password Correct!
+user.id: 55314022bcc6f2154e74bdbb
+user.username: wordel
+user authenticated correctly
+[0mPOST /login [36m302 [0m7.415 ms - 58[0m
+in / route
+User has session
+[0mGET / [32m200 [0m3.746 ms - 1909[0m
+[0mGET /stylesheets/style.css [32m200 [0m1.447 ms - 365[0m
+[0mGET /images/brain.gif [32m200 [0m1.108 ms - 31398[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.978 ms - 68[0m
+[0mGET /login [32m200 [0m3.379 ms - 1870[0m
+[0mGET /stylesheets/signin.css [32m200 [0m1.072 ms - 969[0m
+[0mGET /../../favicon.ico [33m403 [0m1.528 ms - 1127[0m
+[0mGET /muieblackcat [33m404 [0m3.244 ms - 1037[0m
+[0mGET //phpMyAdmin/scripts/setup.php [33m404 [0m2.282 ms - 1037[0m
+[0mGET //phpmyadmin/scripts/setup.php [33m404 [0m13.172 ms - 1037[0m
+[0mGET //pma/scripts/setup.php [33m404 [0m2.003 ms - 1037[0m
+[0mGET //myadmin/scripts/setup.php [33m404 [0m1.804 ms - 1037[0m
+[0mGET //MyAdmin/scripts/setup.php [33m404 [0m1.807 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.194 ms - 40[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.686 ms - 68[0m
+in / route
+User does not have session
+[0mHEAD / [36m302 [0m1.486 ms - 40[0m
+[0mGET /robots.txt [33m404 [0m1.416 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.554 ms - 40[0m
+[0mGET /login [32m200 [0m1.327 ms - 1870[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.093 ms - 40[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.585 ms - 68[0m
+[0mGET /login [32m200 [0m0.970 ms - 1870[0m
+[0mGET /robots.txt [33m404 [0m1.733 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.219 ms - 40[0m
+[0mGET /login [32m200 [0m1.576 ms - 1870[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.653 ms - 40[0m
+[0mGET /login [32m200 [0m1.142 ms - 1870[0m
+in / route
+User does not have session
+[0mHEAD / [36m302 [0m9.684 ms - 40[0m
+in /mastermind route
+User does not have session
+[0mGET /mastermind [36m302 [0m3.967 ms - 40[0m
+[0mGET /login [32m200 [0m2.772 ms - 1870[0m
+[0mGET /login [32m200 [0m1.185 ms - 1870[0m
+[0mGET /weatherAjax.html [33m404 [0m1.633 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.661 ms - 68[0m
+[0mGET /login [32m200 [0m2.663 ms - 1870[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.799 ms - -[0m
+[0mGET /mastermind/start [33m404 [0m1.435 ms - 1037[0m
+Starting new mastermind game...
+{}
+BKWV
+[0mPOST /mastermind/start [32m200 [0m1.206 ms - 61[0m
+[0mGET /mastermind/start [33m404 [0m1.307 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.749 ms - 68[0m
+[0mGET /login [36m304 [0m2.634 ms - -[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.692 ms - -[0m
+In Login Controller
+{ username: 'me', password: 'me' }
+In Login Controller Exec
+Password Correct!
+user.id: 551ddb510e27f59c4e3c05b0
+user.username: me
+user authenticated correctly
+[0mPOST /login [36m302 [0m5.441 ms - 58[0m
+in / route
+User has session
+[0mGET / [32m200 [0m3.645 ms - 2216[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.602 ms - -[0m
+[0mGET /images/brain.gif [36m304 [0m0.851 ms - -[0m
+Starting new mastermind game...
+{}
+KBYV
+[0mPOST /mastermind/start [32m200 [0m3.165 ms - 61[0m
+[0mGET /mastermind/2/ [33m404 [0m4.332 ms - 1037[0m
+[0mGET /mastermind/2/guess [33m404 [0m3.152 ms - 1037[0m
+Starting new mastermind game...
+{}
+RVWY
+[0mPOST /mastermind/start [32m200 [0m2.334 ms - 61[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.540 ms - 68[0m
+[0mGET /login [32m200 [0m2.450 ms - 1870[0m
+[0mGET /stylesheets/signin.css [32m200 [0m0.999 ms - 969[0m
+[0mGET /signup [32m200 [0m2.802 ms - 2038[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.967 ms - -[0m
+In Signup Controller
+User set
+Password set
+Email set
+[0mPOST /signup [36m302 [0m5.401 ms - 58[0m
+in / route
+User has session
+[0mGET / [32m200 [0m2.217 ms - 2217[0m
+[0mGET /stylesheets/style.css [32m200 [0m0.845 ms - 365[0m
+[0mGET /images/brain.gif [32m200 [0m0.972 ms - 31398[0m
+Starting new mastermind game...
+{}
+KYKW
+[0mPOST /mastermind/start [32m200 [0m3.058 ms - 61[0m
+Making a guess...
+{}
+[0mPOST /mastermind/2/guess [32m200 [0m1.258 ms - 53[0m
+in / route
+User has session
+[0mGET / [36m304 [0m2.458 ms - -[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.610 ms - -[0m
+[0mGET /images/brain.gif [36m304 [0m0.462 ms - -[0m
+Starting new mastermind game...
+{}
+GORW
+[0mPOST /mastermind/start [32m200 [0m2.206 ms - 61[0m
+Making a guess...
+{}
+[0mPOST /mastermind/5/guess [32m200 [0m1.113 ms - 53[0m
+Making a guess...
+{}
+[0mPOST /mastermind/5/guess [31m500 [0m4.450 ms - 1147[0m
+Making a guess...
+{ ata: '' }
+[0mPOST /mastermind/5/guess [31m500 [0m2.774 ms - 1147[0m
+Making a guess...
+{ '{guess:RYGB}': '' }
+[0mPOST /mastermind/5/guess [31m500 [0m2.810 ms - 1147[0m
+Making a guess...
+{ '{"guess":"RYGB"}': '' }
+[0mPOST /mastermind/5/guess [31m500 [0m2.925 ms - 1147[0m
+Making a guess...
+{ '{"guess":"RYGB"}': '' }
+[0mPOST /mastermind/5/guess [31m500 [0m3.928 ms - 1147[0m
+[0mGET /login [32m200 [0m1.273 ms - 1870[0m
+[0mGET /signup [32m200 [0m1.139 ms - 2038[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.083 ms - 40[0m
+[0mGET /login [32m200 [0m1.113 ms - 1870[0m
+[0mGET /../../favicon.ico [33m403 [0m2.727 ms - 1127[0m
+in / route
+User does not have session
+[0mHEAD / [36m302 [0m1.508 ms - 40[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.715 ms - 40[0m
+[0mGET /login [32m200 [0m1.157 ms - 1870[0m
+in / route
+User does not have session
+[0mHEAD / [36m302 [0m1.501 ms - 40[0m
+[0mGET /robots.txt [33m404 [0m1.712 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.400 ms - 68[0m
+[0mGET /login [32m200 [0m5.988 ms - 1870[0m
+[0mGET /app.js [33m404 [0m1.340 ms - 1037[0m
+[0mGET /stylesheets/signin.css [32m200 [0m1.145 ms - 969[0m
+[0mGET /robots.txt [33m404 [0m1.305 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.778 ms - 40[0m
+[0mGET /login [32m200 [0m2.438 ms - 1870[0m
+[0mGET /jmx-console/ [33m404 [0m1.379 ms - 1037[0m
+[0mGET /login [32m200 [0m1.143 ms - 1870[0m
+[0mGET /mastermind/2/ [33m404 [0m2.262 ms - 1037[0m
+[0mGET /mastermind/start [33m404 [0m2.179 ms - 1037[0m
+[0mGET /mastermind/2/guess [33m404 [0m1.656 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m1.843 ms - 68[0m
+[0mGET /login [32m200 [0m2.751 ms - 1870[0m
+[0mGET /stylesheets/signin.css [32m200 [0m1.739 ms - 969[0m
+[0mGET /favicon.ico [33m404 [0m2.913 ms - 1037[0m
+[0mGET /signup [32m200 [0m2.277 ms - 2038[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.879 ms - -[0m
+In Signup Controller
+User set
+Password set
+Email set
+[0mPOST /signup [36m302 [0m4.943 ms - 58[0m
+in / route
+User has session
+[0mGET / [32m200 [0m2.254 ms - 2217[0m
+[0mGET /stylesheets/style.css [32m200 [0m0.849 ms - 365[0m
+[0mGET /images/brain.gif [32m200 [0m1.189 ms - 31398[0m
+Starting new mastermind game...
+{}
+RVKY
+[0mPOST /mastermind/start [32m200 [0m4.243 ms - 61[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.681 ms - -[0m
