@@ -317,3 +317,30 @@ Starting new mastermind game...
 RVKY
 [0mPOST /mastermind/start [32m200 [0m4.243 ms - 61[0m
 [0mGET /stylesheets/style.css [36m304 [0m0.681 ms - -[0m
+[0mGET /weatherAjax.html [33m404 [0m1.317 ms - 1037[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.469 ms - 68[0m
+[0mGET /login [32m200 [0m0.957 ms - 1870[0m
+in / route
+User does not have session
+[0mGET / [36m302 [0m2.192 ms - 68[0m
+[0mGET /login [32m200 [0m2.723 ms - 1870[0m
+[0mGET /stylesheets/signin.css [36m304 [0m0.591 ms - -[0m
+In Login Controller
+{ username: 'me', password: 'me' }
+In Login Controller Exec
+Password Correct!
+user.id: 551ddb510e27f59c4e3c05b0
+user.username: me
+user authenticated correctly
+[0mPOST /login [36m302 [0m3.625 ms - 58[0m
+in / route
+User has session
+[0mGET / [32m200 [0m2.710 ms - 2216[0m
+[0mGET /stylesheets/style.css [36m304 [0m0.618 ms - -[0m
+[0mGET /images/brain.gif [36m304 [0m0.391 ms - -[0m
+Starting new mastermind game...
+{}
+RYOB
+[0mPOST /mastermind/start [32m200 [0m2.268 ms - 61[0m
