@@ -4,10 +4,8 @@ $(function() {
 var gameApp = angular.module("game", []);
 gameApp.controller("Board", ["$http", function($http) {
 	this.loaded = false;
-	console.log("sending post");
 	var view = this;
 	$http.post("/mastermind/start", {code_length: 4, max_guesses: 12}).success(function(data) {
-		console.log("Post success!");
 		view.sequenceComplexity = data.code_length;
 		view.guessCap = data.max_guesses;
 		view.loaded = true;
@@ -18,7 +16,6 @@ gameApp.controller("Board", ["$http", function($http) {
 		view.gameResponses = new Array(view.guessCap);
 		view.gameCode = new Array(view.guessCap);
 		view.gameOver = false;
-		console.log(view);
 	}).error(function(data) {
 		console.log("Post failure :(");
 		//prompt a refresh
@@ -68,10 +65,8 @@ gameApp.controller("Board", ["$http", function($http) {
 	};
 	this.getWinningColor = function(circleNumber) {
 		if (this.gameCode[0] === undefined || this.gameCode[0] === null) {
-			console.log("returning false because the game is still in progress");
 			return false;
 		}
-		console.log("this is being called");
 		var color = this.gameCode[circleNumber];
 		if (color === "R") {
 			return "color-guess-red";
@@ -133,11 +128,9 @@ gameApp.controller("Board", ["$http", function($http) {
 	};
 	this.resetRow = function() {
 		this.gameBoard[this.activeRow] = new Array();
-		console.log("Resetting");
 		console.log(JSON.stringify(this));
 	};
 	this.submitGuess = function() {
-		console.log(this);
 		var guessString = "";
 		for (var i = 0; i < this.sequenceComplexity; i++) {
 			guessString += this.gameBoard[this.activeRow][i];
@@ -173,7 +166,6 @@ gameApp.controller("Board", ["$http", function($http) {
 				view.activeRow++;
 				view.gameBoard[view.activeRow] = new Array();
 			}
-			console.log(JSON.stringify(view));
 		});
 	};
 	this.isGuessReady = function() {
@@ -188,4 +180,5 @@ gameApp.controller("Board", ["$http", function($http) {
 	this.isInactiveRow = function(rowNumber) {
 		return this.activeRow < rowNumber;
 	};
+
 }]);

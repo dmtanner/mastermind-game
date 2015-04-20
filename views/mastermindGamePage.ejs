@@ -14,7 +14,7 @@
 <body ng-app="game" >
 	<div class="gameBoardBorder" ng-controller="Board as board">
 		<h2 class="gameTitle">Mastermind</h2>
-		<div class="color-guess-panel jumbotron" ng-hide: "board.gameOver">
+		<div class="color-guess-panel jumbotron" ng-hide="board.gameOver">
 			<div class="line" ng-mouseover="board.showDragTip()">
 			</div>
 			<div class="line" ng-mouseover="board.showDragTip()">
@@ -90,6 +90,7 @@
 		<div class="game-guess-row">
 			<div class="game-guess-circle" ng-repeat="circleNumber in board.getNumber(board.sequenceComplexity)" ng-class="board.getWinningColor(circleNumber)">
 			</div>
+			<a class="returnButton btn btn-success" href="/">Return to game page</a>
 		</div>
 	</div>
 </div>
