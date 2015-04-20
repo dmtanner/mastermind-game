@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="stylesheets/mastermindGamePage.css">
+	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script type="text/javascript" src="javascripts/mastermindGamePage.js"></script>
+</head>
+<body ng-app="game" >
+	<div class="gameBoardBorder" ng-controller="Board as board">
+		<h2 class="gameTitle"> Mastermind</h2>
+		<div class="color-guess-panel jumbotron">
+			<div class="line" ng-mouseover="board.showDragTip()">
+			</div>
+			<div class="line" ng-mouseover="board.showDragTip()">
+			</div>
+			<div class="line" ng-mouseover="board.showDragTip()">
+			</div>
+			<h3 class="gameTitle color-guess-title">Click to guess</h3>
+			<div class="color-guess-circle-block">
+				<div class="color-guess-circle color-guess-red" ng-click="board.redGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-orange" ng-click="board.orangeGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-yellow" ng-click="board.yellowGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-green" ng-click="board.greenGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-blue" ng-click="board.blueGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-violet" ng-click="board.violetGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-white" ng-click="board.whiteGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-black" ng-click="board.blackGuess()">
+				</div>
+			</div>
+			<div class="button-container">
+				<button class="btn btn-default reset-button" ng-click="board.resetRow()">
+					Reset
+				</button>
+				<button class="btn btn-success submit-button pull-right" ng-disabled="!board.isGuessReady()" ng-click="board.submitGuess()">
+					Submit
+				</button>
+			</div>
+		</div>
+	<div class="game-guess-row" ng-repeat="rowIndex in board.getNumber(board.guessCap)" ng-class="{activeRow: board.isActiveRow(rowIndex), unreachedRow: board.isReachedRow(rowIndex), inactiveRow: board.isInactiveRow(rowIndex)}">
+		<div class="game-guess-circle" ng-repeat="circleNumber in board.getNumber(board.sequenceComplexity)" ng-class="board.getColor(rowIndex, circleNumber)">
+		</div>
+		<div class="spacing-div divider">
+		</div>
+		<div class="spacing-div">
+		</div>
+		<div class="game-key-block">
+			<div class="game-key-row">
+				<div class="game-key-circle" ng-class="game-key-1">
+				</div>
+				<div class="game-key-circle" ng-class="game-key-2">
+				</div>
+			</div>
+			<div class="game-key-row">
+				<div class="game-key-circle" ng-class="game-key-3">
+				</div>
+				<div class="game-key-circle" ng-class="game-key-4"
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body></html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="userInfo">	<!-- may want to add ng-app and controller later -->
+<head>
+  <title>Home</title>
+  <link rel="stylesheet" type="text/css"
+      href="/static/css/styles.css" />
+</head>
+<body>
+  <div>
+    <h2>Welcome. You are Logged In as <%= username %> </h2>
+    <a href="/logout">Logout</a>
+    <a href="/mastermind">Play Mastermind</a>
+    <p><%= msg %><p>
+  </div>
+  <hr>
+  <script src="http://code.angularjs.org/1.2.9/angular.min.js"></script>
+  <script src="/javascripts/userInfo.js"></script>
+</body>
+</html>

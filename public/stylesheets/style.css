@@ -1,8 +1,21 @@
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
   color: #00B7FF;
+}
+.navbar {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #5cb85c;
+}
+.row div[id="button"] {
+  padding-top: 75px;
+}
+#space {
+  padding-top: 95px;
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  border-bottom-color: #5cb85c;
 }
