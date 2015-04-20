@@ -1,3 +1,6 @@
+var mongoose = require('mongoose');
+var ArchivedGame = mongoose.model('Game');
+var PlayerStats = mongoose.model('Stats');
 
 var currentGames = {};
 var nextGameID = 1;
@@ -105,9 +108,18 @@ Game.prototype = {
 };
 
 // STUB: communicate with server to save stats from a game
-function archive(game) {
-    console.log(JSON.stringify(game));
-    return "Finished";
+function archive(id) {
+    var game = currentGames[id];
+    currentGames[id] = "Finished";
+    console.log(game);
+/*
+    var arch = new ArchivedGame(game);
+
+    arch.save( function(err, game) {
+        if (err) return next(err);
+        currentGames[id] = game._id;
+    });
+    * */
 }
 
 function startNewGame(host, guest, code, maxguesses) {
@@ -137,7 +149,7 @@ module.exports = {
         if (player != game.guest) {
             result = {error: "This is not your game to play."}
         }
-        else if (game === "Finished") {
+        else if (game === "Finished" || typeof(game) === "number") {
             // TODO: grab the archived game data / stats.
             result = {error: "Game with id " + id + " has already finished."}
         }
@@ -148,13 +160,15 @@ module.exports = {
             if (result.right_place === guess.length) {
                 result.message = "You won!";
                 game.winner = game.guest;
-                currentGames[id] = archive(game);
+                result.code = game.code;
+                archive(id);
             }
             // Lose condition
             else if (result.num_guesses >= game.max_guesses) {
                 result.message = "You lost!";
                 game.winner = game.host;
-                currentGames[id] = archive(game);
+                result.code = game.code;
+                archive(id);
             }
         }
         else {
