@@ -22,11 +22,15 @@
 			<div class="color-guess-circle-block">
 				<div class="color-guess-circle color-guess-red" ng-click="board.redGuess()">
 				</div>
+				<div class="color-guess-circle color-guess-orange" ng-click="board.orangeGuess()">
+				</div>
 				<div class="color-guess-circle color-guess-yellow" ng-click="board.yellowGuess()">
 				</div>
 				<div class="color-guess-circle color-guess-green" ng-click="board.greenGuess()">
 				</div>
 				<div class="color-guess-circle color-guess-blue" ng-click="board.blueGuess()">
+				</div>
+				<div class="color-guess-circle color-guess-violet" ng-click="board.violetGuess()">
 				</div>
 				<div class="color-guess-circle color-guess-white" ng-click="board.whiteGuess()">
 				</div>
@@ -51,19 +55,18 @@
 		</div>
 		<div class="game-key-block">
 			<div class="game-key-row">
-				<div class="game-key-circle">
+				<div class="game-key-circle" ng-class="game-key-1">
 				</div>
-				<div class="game-key-circle">
+				<div class="game-key-circle" ng-class="game-key-2">
 				</div>
 			</div>
 			<div class="game-key-row">
-				<div class="game-key-circle">
+				<div class="game-key-circle" ng-class="game-key-3">
 				</div>
-				<div class="game-key-circle">
+				<div class="game-key-circle" ng-class="game-key-4"
 				</div>
 			</div>
 		</div>
 	</div>
 </div>
-</body>
-</html>
+</body></html>

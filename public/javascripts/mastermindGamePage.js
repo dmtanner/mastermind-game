@@ -1,10 +1,22 @@
 var gameApp = angular.module("game", []);
-gameApp.controller("Board", function() {
+gameApp.controller("Board", ["$http", function($http) {
+	this.loaded = false;
+	console.log("sending post");
+	$http.post("/mastermind/start", {code_length: 4, max_guesses: 12}).success(function(data) {
+		console.log("Post success!");
+		this.sequenceComplexity = data.code_length;
+		this.guessCap = data.max_guesses;
+		this.loaded = true;
+		this.gameID = data.id;
+	}).error(function(data) {
+		console.log("Post failure :(");
+		//prompt a refresh
+	});
 	this.activeRow = 0;
-	this.sequenceComplexity = 4;
-	this.guessCap = 8;
 	this.gameBoard = new Array(this.guessCap);
 	this.gameBoard[this.activeRow] = new Array();
+	this.gameResponses = new Array(this.guessCap);
+	this.gameResponses[this.activeRow] = new Array();
 	this.getNumber = function(number) {
 		var returnArray = [];
 		for (var i = 0; i < number; i++) {
@@ -67,8 +79,16 @@ gameApp.controller("Board", function() {
 		console.log(JSON.stringify(this));
 	};
 	this.submitGuess = function() {
-		this.activeRow++;
-		this.gameBoard[this.activeRow] = new Array();
+		var guessString = "";
+		for (var i = 0; i < this.sequenceComplexity; i++) {
+			guessString += this.gameBoard[this.activeRow][i];
+		}
+		$http.post("/mastermind/"+this.gameID+"/guess", {guess: guessString}).success(function(data) {
+			this.gameResponse.push([]);
+			this.activeRow++;
+			this.gameBoard[this.activeRow] = new Array();
+
+		});
 	};
 	this.isGuessReady = function() {
 		return (this.gameBoard[this.activeRow].length === this.sequenceComplexity);
@@ -82,5 +102,5 @@ gameApp.controller("Board", function() {
 	this.isInactiveRow = function(rowNumber) {
 		return this.activeRow < rowNumber;
 	};
-});
+}]);
 $('.color-guess-panel').draggable();
