@@ -95,6 +95,37 @@
   margin-right: 8px;
 }
 
+.response-key {
+  position: fixed;
+  top: 2px;
+  right: 2px;
+  border: #bce 1px solid;
+  border-radius: 30px;
+  width: 240px;
+  margin: 0 auto;
+  background-color: #bce;
+}
+
+.response-key-text-holder {
+  width: 100px;
+  display: inline-block;
+
+}
+.response-key-text {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.response-key-block {
+  border: orange 2px dotted;
+  width: 80px;
+  border: black 1px dotted;
+  height: auto;
+  display: inline-block;
+  margin: 0 0 20px auto;
+  background-color: #96663A;
+  border-radius: 12%;
+}
+
 .game-guess-row {
   height: auto;
   width: 550px;

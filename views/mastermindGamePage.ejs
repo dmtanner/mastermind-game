@@ -50,9 +50,17 @@
 		</div>
 		<div class="response-key">
 		<h3 class="gameTitle">Key</h3>
-			<div class="game-key-block">
-				<div class="game-key-circle color-response-red">Correct Color & Placement</div>
-				<div class="game-key-circle color-response-white" >Correct Color</div>	
+			<div class="response-key-holder">
+				<div class="response-key-text-holder">
+					<h5 class="response-key-text">Correct Color & Placement</h5>
+					<h5 class="response-key-text">Correct Color</h5>
+				</div>
+				<div class="response-key-block">
+					<div class="game-key-circle color-response-red"></div>
+					<div class="game-key-circle"></div>
+					<div class="game-key-circle color-response-white" ></div>	
+					<div class="game-key-circle"></div>
+				</div>
 			</div>
 		</div>
 	<div class="game-guess-row" ng-repeat="rowIndex in board.getNumber(board.guessCap)" ng-class="{activeRow: board.isActiveRow(rowIndex), unreachedRow: board.isReachedRow(rowIndex), inactiveRow: board.isInactiveRow(rowIndex)}">
