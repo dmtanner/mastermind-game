@@ -75,7 +75,7 @@
      user.set('color', req.body.color);
      user.save(function(err) {
        if (err){
-         res.sessor.error = err;
+         res.session.error = err;
        } else {
          req.session.msg = 'User Updated.';
        }

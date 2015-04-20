@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="stylesheets/mastermindGamePage.css">
 	<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -10,7 +11,7 @@
 </head>
 <body ng-app="game" >
 	<div class="gameBoardBorder" ng-controller="Board as board">
-		<h2 class="gameTitle"> Mastermind</h2>
+		<h2 class="gameTitle">Mastermind</h2>
 		<div class="color-guess-panel jumbotron">
 			<div class="line" ng-mouseover="board.showDragTip()">
 			</div>
@@ -45,6 +46,14 @@
 					Submit
 				</button>
 			</div>
+			
+		</div>
+		<div class="response-key">
+		<h3 class="gameTitle">Key</h3>
+			<div class="game-key-block">
+				<div class="game-key-circle color-response-red">Correct Color & Placement</div>
+				<div class="game-key-circle color-response-white" >Correct Color</div>	
+			</div>
 		</div>
 	<div class="game-guess-row" ng-repeat="rowIndex in board.getNumber(board.guessCap)" ng-class="{activeRow: board.isActiveRow(rowIndex), unreachedRow: board.isReachedRow(rowIndex), inactiveRow: board.isInactiveRow(rowIndex)}">
 		<div class="game-guess-circle" ng-repeat="circleNumber in board.getNumber(board.sequenceComplexity)" ng-class="board.getColor(rowIndex, circleNumber)">
@@ -55,17 +64,22 @@
 		</div>
 		<div class="game-key-block">
 			<div class="game-key-row">
-				<div class="game-key-circle" ng-class="game-key-1">
+				<div class="game-key-circle" ng-class="board.getResponseColor(rowIndex, 0)">
 				</div>
-				<div class="game-key-circle" ng-class="game-key-2">
+				<div class="game-key-circle" ng-class="board.getResponseColor(rowIndex, 1)" >
 				</div>
 			</div>
 			<div class="game-key-row">
-				<div class="game-key-circle" ng-class="game-key-3">
+				<div class="game-key-circle" ng-class="board.getResponseColor(rowIndex, 2)">
 				</div>
-				<div class="game-key-circle" ng-class="game-key-4"
+				<div class="game-key-circle" ng-class="board.getResponseColor(rowIndex, 3)">
 				</div>
 			</div>
+		</div>
+	</div>
+	<div class="correct-answer" ng-show="gameOver">
+		<h2 class="gameTitle">Correct Answer</h2>
+		<div class="game-guess-circle" ng-repeat="circleNumber in board.getNumber(board.sequenceComplexity)" ng-cass="board.getWinningColor(circleNumber)">
 		</div>
 	</div>
 </div>

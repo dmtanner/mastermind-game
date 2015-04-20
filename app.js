@@ -34,7 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 //console.log("Mongoose db name: " + mongoose.connection.getName());
 app.use(expressSession({
-        secret: 'SECRET',
+        secret: 'MoonyMax',
         cookie: {maxAge: 60*60*1000},
         store: new mongoStore({
                 db: 'mastermind',
