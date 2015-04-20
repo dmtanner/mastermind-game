@@ -1,6 +1,12 @@
+<<<<<<< HEAD
 //var mongoose = require('mongoose');
 //var ArchivedGame = mongoose.model('Game');
 //var PlayerStats = mongoose.model('Stats');
+=======
+var mongoose = require('mongoose');
+var ArchivedGame = mongoose.model('Game');
+var PlayerStats = mongoose.model('Stats');
+>>>>>>> 1860f53e1756cc1f500057c63b2ba16b6a718891
 
 var currentGames = {};
 var nextGameID = 1;
