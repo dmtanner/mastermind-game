@@ -7,25 +7,37 @@
  }
  exports.signup = function(req, res){
    console.log("In Signup Controller");
-   var user = new User({username:req.body.username});
-   console.log("User set");
-   user.set('hashed_password', hashPW(req.body.password));
-   console.log("Password set");
-   user.set('email', req.body.email);
-   console.log("Email set");
-   user.save(function(err) {
-     if (err){
-	   console.log("Error in saving user" + err);
-       res.session.error = err;
-       res.redirect('/signup');
-     } else {
-       req.session.user = user.id;
-       req.session.username = user.username;
-       req.session.msg = 'Authenticated as ' + user.username;
-       res.redirect('/');
-     }
-   });
- };
+   var query = User.where({username:req.body.username});
+
+   query.findOne(function(err, data) {
+		   if(data === null) {
+				   var user = new User({username:req.body.username});
+				   console.log("User set");
+				   user.set('hashed_password', hashPW(req.body.password));
+				   console.log("Password set");
+				   user.set('email', req.body.email);
+				   console.log("Email set");
+				   user.save(function(err) {
+					 if (err){
+					   console.log("Error in saving user" + err);
+					   res.session.error = err;
+					   res.redirect('/signup');
+					 } else {
+					   req.session.user = user.id;
+					   req.session.username = user.username;
+					   req.session.msg = 'Authenticated as ' + user.username;
+					   res.redirect('/');
+					 }
+				   });
+   			}
+			else {
+			   console.log("Error in saving user" + err);
+			   //res.session.error = err;
+			   res.redirect('/signup');
+			}
+ 	});
+ }
+
  exports.login = function(req, res){
    console.log("In Login Controller");
    console.log(req.body);

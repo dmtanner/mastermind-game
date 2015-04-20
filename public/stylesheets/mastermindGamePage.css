@@ -16,7 +16,7 @@
 }
 
 .color-guess-panel {
-  position: absolute;
+  position: fixed;
   left: 0;
   top: 0;
   padding: 0;
@@ -105,25 +105,28 @@
   margin: 0 auto;
   background-color: #bce;
 }
-
-.response-key-text-holder {
-  width: 100px;
-  display: inline-block;
-
+.key-holder{
+  height: 40px;
 }
 .response-key-text {
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-.response-key-block {
-  border: orange 2px dotted;
-  width: 80px;
-  border: black 1px dotted;
-  height: auto;
+  width: 80%;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  vertical-align: middle;
+  text-align: center;
   display: inline-block;
-  margin: 0 0 20px auto;
-  background-color: #96663A;
-  border-radius: 12%;
+}
+.response-key-circle {
+  vertical-align: middle;
+  position: absolute;
+  right: 10px;
+  border: black 1px solid;
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  border-radius: 100%;
+  display: inline-block;
+  background-color: #aaa;
 }
 
 .game-guess-row {

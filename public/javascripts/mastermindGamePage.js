@@ -68,8 +68,10 @@ gameApp.controller("Board", ["$http", function($http) {
 	};
 	this.getWinningColor = function(circleNumber) {
 		if (this.gameCode[0] === undefined || this.gameCode[0] === null) {
+			console.log("returning false because the game is still in progress");
 			return false;
 		}
+		console.log("this is being called");
 		var color = this.gameCode[circleNumber];
 		if (color === "R") {
 			return "color-guess-red";
@@ -159,12 +161,12 @@ gameApp.controller("Board", ["$http", function($http) {
 			if (rightPlace === 4) {
 				alert("You won! Congradumacations :)\nIt took you " + (view.activeRow + 1) + " guesses.");
 				view.activeRow++;
-				view.code = data.code.split("");
+				view.gameCode = data.code.split("");
 				view.gameOver = true;
 				view.loaded = false;
-			} else if (view.activeRow === 11) {
+			} else if (view.activeRow === view.guessCap - 1) {
 				alert("You lost. Better luck next time!");
-				view.code = data.code.split("");
+				view.gameCode = data.code.split("");
 				console.log(JSON.toString(view));
 				view.gameOver = true;			
 			} else {
