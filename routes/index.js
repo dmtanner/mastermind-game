@@ -49,7 +49,7 @@ router.post('/mastermind/:gameid/guess', function(req, res) {
     console.log(req.body);
     if (req.session.user) {
         console.log("Guess request: " + req);
-        res.send(mastermind.makeGuess(req.gameid, req.session.user, req.body.guess));
+        res.send(mastermind.makeGuess(req.gameid, req.session.user, req.body.guess, req.session.username));
     } else {
         console.log("User does not have session");
         req.session.msg = 'Access denied!';
