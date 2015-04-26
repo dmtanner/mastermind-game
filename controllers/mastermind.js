@@ -144,7 +144,7 @@ module.exports = {
         return startNewGame(null, player, generateCode(codelength), maxguesses);
     },
     deleteAllGames: deleteAllGames,
-    makeGuess: function(id, player, guess) { // TEMP/stub
+    makeGuess: function(id, player, guess, username) { // TEMP/stub
         // TODO: authentication of the player
         var game = currentGames[id];
         var result;
@@ -165,9 +165,8 @@ module.exports = {
                 result.code = game.code;
                 archive(id);
                 //save highscore
-		console.log("Player: " + player);
                 var score = game.guesses.length;
-                users.highscore(player, score);
+                users.highscore(username, score);
             }
             // Lose condition
             else if (result.num_guesses >= game.max_guesses) {
