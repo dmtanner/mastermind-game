@@ -1,3 +1,5 @@
+var users = require('./users_controller');
+
 //var mongoose = require('mongoose');
 //var ArchivedGame = mongoose.model('Game');
 //var PlayerStats = mongoose.model('Stats');
@@ -162,6 +164,10 @@ module.exports = {
                 game.winner = game.guest;
                 result.code = game.code;
                 archive(id);
+                //save highscore
+                var score = game.guesses.length;
+                var username = player.username;
+                users.highscore(username, score);
             }
             // Lose condition
             else if (result.num_guesses >= game.max_guesses) {
