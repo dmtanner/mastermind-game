@@ -165,10 +165,9 @@ module.exports = {
                 result.code = game.code;
                 archive(id);
                 //save highscore
-				console.log("Player: " + player);
+		console.log("Player: " + player);
                 var score = game.guesses.length;
-                var username = player.username;
-                users.highscore(username, score);
+                users.highscore(player, score);
             }
             // Lose condition
             else if (result.num_guesses >= game.max_guesses) {
