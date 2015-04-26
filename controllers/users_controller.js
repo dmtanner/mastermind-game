@@ -116,17 +116,15 @@
      }
    });
  };
-exports.highscore = function(req, res) {
+ 
+exports.highscore = function(myusername, myscore) {
 	
    console.log("In Highscore Controller");
 
-   var highscore = new Highscore({username:req.body.username});
-   highscore.set('score', req.body.score);
+   var highscore = new Highscore({username:myusername, score:myscore});
    highscore.save(function(err) {
 	 if (err){
 	   console.log("Error in saving highscore" + err);
-	   res.session.error = err;
-	   res.redirect('/');
 	 }
    });
 };
