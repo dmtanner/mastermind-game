@@ -120,7 +120,7 @@
 exports.highscore = function(myusername, myscore) {
 	
    console.log("In Highscore Controller");
-
+   console.log("username: " + myusername);
    var highscore = new Highscore({username:myusername, score:myscore});
    highscore.save(function(err) {
 	 if (err){

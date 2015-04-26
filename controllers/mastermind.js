@@ -165,6 +165,7 @@ module.exports = {
                 result.code = game.code;
                 archive(id);
                 //save highscore
+				console.log("Player: " + player);
                 var score = game.guesses.length;
                 var username = player.username;
                 users.highscore(username, score);
