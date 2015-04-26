@@ -8,6 +8,7 @@ var expressSession = require('express-session');
 var mongoStore = require('connect-mongo')({session: expressSession});
 var mongoose = require('mongoose');
 require('./models/users_model.js');
+require('./models/highscore_model.js');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
