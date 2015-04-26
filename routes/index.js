@@ -33,7 +33,7 @@ router.param('gameid', function(req, res, next, id) {
 router.post('/mastermind/start', function(req, res) {
     console.log("Starting new mastermind game...");
     console.log(req.body);
-    if (true) { //req.session.user) {
+    if (req.session.user) {
         if (req.body.code_length == undefined) req.body.code_length = 4;
         if (req.body.max_guesses == undefined) req.body.max_guesses = 15;
         res.send(mastermind.startCPUGame(req.session.user, req.body.code_length, req.body.max_guesses));
@@ -47,7 +47,8 @@ router.post('/mastermind/start', function(req, res) {
 router.post('/mastermind/:gameid/guess', function(req, res) {
     console.log("Making a guess...");
     console.log(req.body);
-    if (true) {//req.session.user) {
+    if (req.session.user) {
+        console.log("Guess request: " + req);
         res.send(mastermind.makeGuess(req.gameid, req.session.user, req.body.guess));
     } else {
         console.log("User does not have session");
