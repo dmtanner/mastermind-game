@@ -42,18 +42,25 @@
 
     <div class="container-fluid">
       <div class="row">
-	<div class="col-sm-1"></div>
-	<div class="col-sm-2" align="center" id="button" >
-	  <button class="btn btn-lg btn-primary btn-clock" type="button" onclick="window.location.assign('/mastermind')">
+		<div class="col-sm-1"></div>
+		<div class="col-sm-2" align="center" id="button" >
+	  	<button class="btn btn-lg btn-primary btn-clock" type="button" onclick="window.location.assign('/mastermind')">
 	    Play Mastermind</button>
-	</div>
-	<div class="col-sm-4">
-	  <div id="space"></div></div>
-	<div class="col-sm-3" align="center">
-	  <img src="images/brain.gif">
-	</div>
+		</div>
+		<div class="col-sm-4">
+	  	<div id="space"></div></div>
+		<div class="col-sm-3" align="center">
+	  	<img src="images/brain.gif">
+		</div>
       </div>
+	  
+	  <div class="row">
+		<div class="table-bordered">
+			//add code to load database in table here
+		</div>
+	  </div>
     </div>
+
 	<script>
 		function startMastermind() {
 			var form = document.createElement('form');
