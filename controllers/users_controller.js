@@ -1,6 +1,7 @@
  var crypto = require('crypto');
  var mongoose = require('mongoose'),
-     User = mongoose.model('User');
+     User = mongoose.model('User'),
+     Highscore = mongoose.model('Highscore');
  function hashPW(pwd){
    return crypto.createHash('sha256').update(pwd).
           digest('base64').toString();
@@ -115,3 +116,17 @@
      }
    });
  };
+exports.highscore = function(req, res) {
+	
+   console.log("In Highscore Controller");
+
+   var highscore = new Highscore({username:req.body.username});
+   highscore.set('score', req.body.score);
+   highscore.save(function(err) {
+	 if (err){
+	   console.log("Error in saving highscore" + err);
+	   res.session.error = err;
+	   res.redirect('/');
+	 }
+   });
+};
